@@ -1,0 +1,56 @@
+\input{preamble}
+\input{format}
+\input{commands}
+
+\begin{document}
+
+\begin{Large}
+    \textsf{\textbf{Homework - October 1, 2024}}
+\end{Large}
+
+\vspace{1ex}
+
+\textsf{\textbf{Student:}} \text{Ayrton Chilibeck}, \href{mailto:achilibe@ualberta.ca}{\texttt{achilibe@ualberta.ca}}\\
+\textsf{\textbf{Lecturer:}} \text{Lili Mou}, \href{mailto:UoA.F24.466566@gmail.com}{\texttt{UoA.F24.466566@gmail.com}}
+
+
+\vspace{2ex}
+
+\begin{problem}{The Epsilon-Neighbourhood}{e-neighbourhood}
+Prove that, given
+\begin{equation*}
+  \lambda = 1-\frac{\epsilon}{2||y-x||}
+\end{equation*}
+and
+\begin{equation*}
+  z = \lambda x + (1-\lambda)y
+\end{equation*}
+That $z$ is in the $\epsilon$-neighbourhood of $x$.
+\end{problem}
+
+\input{problems/problem-1}
+
+\begin{problem}{Global optimum of a Convex Function}{global-optimum}
+Prove that the global optimum of a convex function $f$ is where $\nabla f = 0$.
+\end{problem}
+
+\input{problems/problem-2}
+
+\begin{problem}{Learning-Rate Annealing Schedule}{lr-schedule}
+ In the gradient descent algorithm, $\alpha >0$ is the learning rate. If  is small enough, then the function value guarantees to decrease. In practice, we may anneal $\alpha$, meaning that we start from a relatively large $\alpha$, but decrease it gradually.
+
+Show that $\alpha$ cannot be decreased too fast. If $\alpha$ is decreased too fast, even if it is strictly positive, the gradient descent algorithm may not converge to the optimum of a convex function.
+\end{problem}
+
+\input{problems/problem-3}
+
+% =================================================
+
+% \newpage
+
+% \vfill
+
+\bibliographystyle{apalike}
+\bibliography{refs}
+
+\end{document}

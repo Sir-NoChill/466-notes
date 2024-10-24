@@ -1,0 +1,15 @@
+Recall the independence of observations for the expectation function, and the rule of constants:
+\begin{align*}
+  \mathbb{E}[X + Y] &= \mathbb{E}[X] + \mathbb{E}[Y]\\
+  \mathbb{E}[\alpha] = \alpha
+\end{align*}
+
+From these two rules, we can first seperate the two functions from each other:
+\begin{equation*}
+  \mathbb{E}[\alpha f(X) + \beta g(X)] = \mathbb{E}[\alpha f(X)] + \mathbb{E}[\beta g(X)]
+\end{equation*}
+Since we know that the expectation of a constant is that constant, we can extract the constants
+\begin{equation*}
+    \mathbb{E}[\alpha f(X) + \beta g(X)] = \alpha\mathbb{E}[f(X)] + \beta\mathbb{E}[g(X)]
+\end{equation*}
+as required.\qed

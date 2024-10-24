@@ -1,0 +1,15 @@
+This is a duplicate of the proof we covered in class for the MSE being an unbiased estimate of the value $\mu$.
+
+First, the sample mean for the set is
+\begin{equation*}
+  \bar{\mu}=\frac{1}{M}\sum_{m=1}^{M}x^{(m)}
+\end{equation*}
+
+Now, we need to prove that the mean is a fair estimator, so let us compute the expectation of the gaussian normal distribution as given:
+\begin{align*}
+  \mathbb{E}[\mathcal{N}(\mu, \sigma^{2})] &= \text{argmax}_{\theta}\Pi P(x|\mu, \sigma)\\
+                                           &= \text{argmax}_{\theta} \log\left[\text{argmax}_{\theta}\Pi P(x|\mu, \sigma)\right]\\
+  &=\text{argmax}_{\mu}\sum^{M}_{m=1}\log\left[\frac{1}{\sqrt{2\pi}\sigma}\exp\left\{-\frac{1}{2}\left(\frac{t^{(m)}-\mu^{T}x^{(m)}}{\sigma}\right)\right\}\right]\\
+  \mathbb{E}[\mathcal{N}(\mu, \sigma^{2})] &= \frac{1}{M}\sum^{M}_{m=1}x^{(m)}
+\end{align*}
+Which we can find by a slight change to the derivation done in class.\qed

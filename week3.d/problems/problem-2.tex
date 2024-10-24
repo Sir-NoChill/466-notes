@@ -1,0 +1,14 @@
+Recall the definition of convexity with respect to the first-order principle from last week:
+\begin{equation*}
+  f(y) \geq f(x) + \transpose{\nabla f(x)}(y-x)
+\end{equation*}
+where $f:\R^n\to\R^n$. Note that this is the extension from the scalar equation from last week to $n$-dimensions.
+
+Since we are given $\nabla f(x)=0$ at our point $x$, we can substitute into the convexity function:
+\begin{align*}
+  f(y) \geq& f(x) + \transpose{\nabla f(x)}(y-x) \\
+  f(y) \geq& f(x) + 0 \\
+  f(y) \geq& f(x)
+\end{align*}
+
+So $\forall x, y \in \R^n$, $f(y) \geq f(x)$, which is the required condition to find a global optimum for a function.\qed

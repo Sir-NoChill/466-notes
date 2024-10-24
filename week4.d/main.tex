@@ -1,0 +1,84 @@
+\input{preamble}
+\input{format}
+\input{commands}
+
+\begin{document}
+
+\begin{Large}
+    \textsf{\textbf{Homework - October 1, 2024}}
+\end{Large}
+
+\vspace{1ex}
+
+\textsf{\textbf{Student:}} \text{Ayrton Chilibeck}, \href{mailto:achilibe@ualberta.ca}{\texttt{achilibe@ualberta.ca}}\\
+\textsf{\textbf{Lecturer:}} \text{Lili Mou}, \href{mailto:UoA.F24.466566@gmail.com}{\texttt{UoA.F24.466566@gmail.com}}
+
+
+\vspace{2ex}
+
+\begin{problem}{Baye's Theorem}{Bayes}
+Prove Baye's Theorem:
+\begin{equation*}
+  P(Y|X) = \frac{P(X|Y)P(Y)}{\sum_{j}P(X_{j})P(Y|X_{j})}
+\end{equation*}
+\end{problem}
+
+\input{problems/problem-1}
+
+\begin{problem}{Monty Hall Problem}{monty-hall}
+Consider the Monty Hall game in a TV show. There are three closed doors, behind which are a car and two goats placed randomly.
+
+\begin{enumerate}
+  \item You are asked to open a door by the host. Say, you would like to open Door 1. What is the probability of getting a car?
+  \item The host knows where the car is but he/she does not tell you. Instead, the host will open another door with a goat.
+        \begin{enumerate}
+          \item If the car is behind Door 2, the host can only open Door 3.
+          \item If the car is behind Door 1, the host can open either Door 2 or Door 3. He/she will do it with equal probability.
+        \end{enumerate}
+        Say, the host has opened Door 3. What is the probability of having the car behind Door 1 now? What is the probability of having the car behind Door 2 now?
+  \item If my goal is to get the car, should I change my first choice (i.e., open Door 1 or Door 2)?
+\end{enumerate}
+\end{problem}
+
+\input{problems/problem-2}
+
+\begin{problem}{Linearity of Expectation}{expectation}
+  Prove that the Expectation function is linear:
+  \begin{equation*}
+    \mathbb{E}[\alpha f(X) + \beta g(X)] = \alpha\mathbb{E}[f(X)] + \beta\mathbb{E}[g(X)]
+  \end{equation*}
+\end{problem}
+
+\input{problems/problem-3}
+
+\begin{problem}{Parameter Estimation}
+  Let $X~U[a,b]$ be a continuous random variable uniformly distributed in the interval $[a, b]$ , where $a$ and $b$ are unknown parameters.
+
+We have a dataset $\{x^{(m)}\}^{M}_{m=1}$ , where each data sample is iid drawn from the above distribution, and we would like to estimate the parameters $a$ and $b$.
+
+Give the likelihood of parameters.
+
+Give the maximum likelihood estimation of parameters.
+\end{problem}
+
+\input{problems/problem-4}
+
+\begin{problem}{MSE}{mse}
+  Suppose $M$ samples, each of which $x^{(m)}~\mathcal{N}(\mu,1)$ is iid generated. Show that the estimate
+\begin{equation*}
+  \hat{\mu} = \frac{1}{M}\sum^{M}_{m=1}x^{(m)}
+\end{equation*}
+is an unbiased estimate of $\mu$.
+\end{problem}
+
+\input{problems/problem-5}
+% =================================================
+
+% \newpage
+
+% \vfill
+
+\bibliographystyle{apalike}
+\bibliography{refs}
+
+\end{document}

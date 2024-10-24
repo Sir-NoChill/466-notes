@@ -1,0 +1,22 @@
+If $X$ is a uniform distribution, then the probability density function of $X$ is
+\begin{align*}
+  f(x\in X|a,b)=\frac{1}{b-a} && a \leq x \leq b
+\end{align*}
+
+We can compute the likelihood of the data given the parameters $a$ and $b$ with the likelihood function $\mathcal{L}(a, b)$ which is the joint probability of observing all data in our set $x^{(m)}$. We can thus write
+\begin{align*}
+  \mathcal{L}(a,b) &= \Pi^{M}_{m=1}f(x|a,b)\\
+                   & \Pi^{M}_{m=1} \frac{1}{b-a}\\
+                   &= \left(\frac{1}{b-a}\right)^{n}
+\end{align*}
+and we need to add a term to ensure that all data is within $a$ and $b$ since observing data outside of the bounds has probability 0
+\begin{equation*}
+  \mathcal{L}(a,b) = \left(\frac{1}{b-a}\right)^{n}\cdot\mathbb{1}_{a\leq\min \vec{x}}\cdot\mathbb{1}_{b\geq\max \vec{x}}
+\end{equation*}
+
+and thus, minimizing $b-a$ maximizes the likelihood function, so our most likely estimate for the parameters $a$ and $b$ is
+\begin{align*}
+  a &= \min\vec{x}\\
+  b &= \max\vec{x}
+\end{align*}
+\qed

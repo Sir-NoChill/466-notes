@@ -1,0 +1,24 @@
+In order to prove that $z$ is in the $\epsilon$-neighbourhood of $\lambda$, it suffices to prove that the distance $z - x$ is less than $\epsilon$. First we can rearrange the formulae to get a clear picture of the inequality:
+
+\begin{align*}
+  z&=\lambda x + (1-\lambda)y\\
+  z - x&=(\lambda x + (1 - \lambda)y) - x\\
+  &=(1-\lambda)(y-x)
+\end{align*}
+
+\begin{align*}
+  \lambda =& 1 - \frac{\epsilon}{2||y - x||}\\
+  \epsilon =& (1-\lambda)2\sqrt{y^2 - x^2}
+\end{align*}
+
+We can now prove that $\epsilon > z - x$ by contradiction:
+
+Suppose that $\epsilon < z - x$. Then
+
+\begin{align*}
+  \epsilon =& z - x\\
+  (1-\lambda)2\sqrt{y^2 - x^2} =& (1-\lambda)(y-x)\\
+  2\sqrt{y^2 - x^2} =& (y-x)\\
+\end{align*}
+
+This is false, since we can take some $y = 3, x = 2$ and arrive at $10 < 1$. Thus it holds that $z$ is in the epsilon-neighbourhood of $x$. \qed

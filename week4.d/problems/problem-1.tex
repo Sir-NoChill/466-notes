@@ -1,0 +1,19 @@
+To prove Baye's Theorem, we recall the definition of conditional probablity:
+
+\begin{align*}
+  P(X|Y) =& \frac{P(X\cap Y)}{P(Y)}\\
+  P(Y|X) =& \frac{P(X\cap Y)}{P(X)}
+\end{align*}
+Solving for $P(X\cap Y)$ in both equations, we can then substitute, and set the two systems equal to each other
+\begin{equation*}
+  P(X|Y)P(Y) = P(Y|X)P(Y) = P(X\cap Y)
+\end{equation*}
+Rearranging gives the default form of the equation
+\begin{equation*}
+  P(Y|X) = \frac{P(X|Y)P(Y)}{P(X)}
+\end{equation*}
+We can then use the multiplication rule for conditional probablilities to write
+\begin{equation}
+  P(Y|X) = \frac{P(X|Y)P(Y)}{\sum_{j}P(X_{j})P(Y|X_{j})}
+\end{equation}
+as required.\qed

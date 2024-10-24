@@ -1,0 +1,14 @@
+Recall that the likelihood function $\mathcal{L}$ is the same as the probability density function. So for a Bernoulli distribution we have
+\begin{align*}
+L (\pi)&=\pi^{N_{1}}(1-\pi)^{N_{2}}
+\end{align*}
+Which is the joint probability of observing the exact number of heads and tails we obtained in our trial.
+
+We can show the negative-log-likelihood function is convex through the definition of concavity or more simply through a second derivative test:
+\begin{align*}
+  -\log L &= \mathcal{L} = -\left(N_{1}\log(\pi) + N_{2}\log(1-\pi)\right)\\
+  \frac{d\mathcal{L}}{d\pi} &= -\frac{N_{1}}{\pi} + \frac{N_{2}}{1-\pi}\\
+  \frac{d^{2}\mathcal{L}}{d\pi^{2}} &= \frac{N_{1}}{\pi^{2}} + \frac{N_{2}}{(1-\pi)^{2}}
+\end{align*}
+
+Both terms are positive in the range $\pi\in (0, 1)$, so the function is indeed convex. We can also prove this using the definition of convexity.

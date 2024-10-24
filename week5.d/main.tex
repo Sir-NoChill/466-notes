@@ -1,0 +1,42 @@
+\input{preamble}
+\input{format}
+\input{commands}
+
+\begin{document}
+
+\begin{Large}
+    \textsf{\textbf{Homework - October 1, 2024}}
+\end{Large}
+
+\vspace{1ex}
+
+\textsf{\textbf{Student:}} \text{Ayrton Chilibeck}, \href{mailto:achilibe@ualberta.ca}{\texttt{achilibe@ualberta.ca}}\\
+\textsf{\textbf{Lecturer:}} \text{Lili Mou}, \href{mailto:UoA.F24.466566@gmail.com}{\texttt{UoA.F24.466566@gmail.com}}
+
+
+\vspace{2ex}
+
+
+\begin{problem}{Bernoulli Distribution}{bernoulli}
+Consider tossing a coin for a few times, where the outcomes follow a Bernoulli distribution parametrized by $\pi$. In other words, the probability of having a head is $\pi$, whereas the probability of having a tail is $1-\pi$.
+
+Suppose we have $N_1$ heads and $N_2$ tails. Give the formula for the likelihood of $\pi$. Show that the negative log-likelihood is convex in $\pi$.
+\end{problem}
+
+\input{problems/problem-1}
+
+\begin{problem}{Constraints}{constraint}
+  Consider the training objective $J=||Xw-t||^{2}$ with a constraint $||w||^{2}\leq C$ for some constant $C$. How would the hypothesis class capacity, overfitting/underfitting and bias/variance vary according to $C$?
+\end{problem}
+
+\input{problems/problem-2}
+% =================================================
+
+% \newpage
+
+% \vfill
+
+\bibliographystyle{apalike}
+\bibliography{refs}
+
+\end{document}
