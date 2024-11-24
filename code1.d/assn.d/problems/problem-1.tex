@@ -1,0 +1,50 @@
+\begin{enumerate}
+\item Result for regression:
+  \begin{lstlisting}
+    0.10650129332985178  -0.005426119116738379
+    0.10381919022069994  -0.0026061031501614703
+  \end{lstlisting}
+\item Plots of the regression model:
+  \begin{figure}[h]
+      \centering
+      \begin{minipage}{0.31\textwidth}
+          \centering
+	  \includegraphics[scale=0.3]{../images/Regression_model_0.1_45.jpg}
+          \caption{\texttt{var2 = 0.1}}
+      \end{minipage}
+      \hfill
+      \begin{minipage}{0.31\textwidth}
+          \centering
+	  \includegraphics[scale=0.3]{../images/Regression_model_0.3_45.jpg}
+          \caption{\texttt{var2 = 0.3}}
+      \end{minipage}
+      \hfill
+      \begin{minipage}{0.31\textwidth}
+          \centering
+	  \includegraphics[scale=0.3]{../images/Regression_model_0.8_45.jpg}
+          \caption{\texttt{var2 = 0.8}}
+      \end{minipage}
+  \end{figure}
+\item As we increase \texttt{var2} we see the regression of x2y and y2x diverge.
+\item As we increase the rotation of the system, we see the x2y regression diverge from \texttt{xnew, ynew} and y2x converge to it as we approach a rotation of $90^o$.
+  \begin{figure}[h]
+      \centering
+      \begin{minipage}{0.31\textwidth}
+          \centering
+	  \includegraphics[scale=0.3]{../images/Regression_model_0.1_15.jpg}
+          \caption{\texttt{var2 = 0.1, rot=15 deg}}
+      \end{minipage}
+      \hfill
+      \begin{minipage}{0.31\textwidth}
+          \centering
+	  \includegraphics[scale=0.3]{../images/Regression_model_0.1_60.jpg}
+          \caption{\texttt{var2 = 0.1, rot=60 deg}}
+      \end{minipage}
+      \hfill
+      \begin{minipage}{0.31\textwidth}
+          \centering
+	  \includegraphics[scale=0.3]{../images/Regression_model_0.1_75.jpg}
+          \caption{\texttt{var2 = 0.1, rot=75 deg}}
+      \end{minipage}
+  \end{figure}
+\end{enumerate}

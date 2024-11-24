@@ -1,0 +1,43 @@
+\begin{enumerate}
+  \item Linear regression by Gradient Descent:
+  \begin{enumerate}
+    \item Best epoch: 99
+    \item Best epoch validation risk: 0.36548514
+    \item Test risk: 0.35231195
+  \end{enumerate}
+  \begin{figure}[h]
+      \centering
+      \begin{minipage}{0.49\textwidth}
+          \centering
+	  \includegraphics[scale=0.49]{../images/q2a_val_loss.png}
+          \caption{Validation loss}
+      \end{minipage}
+      \hfill
+      \begin{minipage}{0.49\textwidth}
+          \centering
+	  \includegraphics[scale=0.49]{../images/q2a_val_risk.png}
+          \caption{Validation risk}
+      \end{minipage}
+  \end{figure}
+  \item Linear regression with quadratic parameters, we found that the best values were
+  \begin{enumerate}
+    \item Best epoch: 99
+    \item Best epoch validation risk: 0.3358987
+    \item Test risk: 0.38372331
+  \end{enumerate}
+  \begin{figure}[h]
+      \centering
+      \begin{minipage}{0.49\textwidth}
+          \centering
+	  \includegraphics[scale=0.49]{../images/q2b_train_loss.png}
+          \caption{Validation loss}
+      \end{minipage}
+      \hfill
+      \begin{minipage}{0.49\textwidth}
+          \centering
+	  \includegraphics[scale=0.49]{../images/q2b_val_risk.png}
+          \caption{Validation risk}
+      \end{minipage}
+  \end{figure}
+  \item My research question would be does this method converge with the quadratic parameters, and does the test loss increase relative to the simple linear regression with more epochs. I found that the system continues to converge past the 100 epochs, changing up to 1000 epochs and has lower test accuracy than the linear regression. This means our quadratic augmentation overfits the data, so our simple linear regression is the more descriptive model.
+\end{enumerate}

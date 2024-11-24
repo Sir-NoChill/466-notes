@@ -1,0 +1,4 @@
+build:
+    #!/bin/bash
+    pushd assn.d
+    pdflatex main.tex

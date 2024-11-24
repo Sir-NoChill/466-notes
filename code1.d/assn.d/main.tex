@@ -1,0 +1,78 @@
+\input{preamble}
+\input{format}
+\input{commands}
+
+\begin{document}
+
+\begin{Large}
+    \textsf{\textbf{Coding Assignment 1 - November 12, 2024}}
+\end{Large}
+
+\vspace{1ex}
+
+\textsf{\textbf{Student:}} \text{Ayrton Chilibeck}, \href{mailto:achilibe@ualberta.ca}{\texttt{achilibe@ualberta.ca}}\\
+\textsf{\textbf{Lecturer:}} \text{Lili Mou}, \href{mailto:UoA.F24.466566@gmail.com}{\texttt{UoA.F24.466566@gmail.com}}
+
+
+\vspace{2ex}
+
+\begin{problem}{Least Squares Regression}{ls-reg}
+\begin{enumerate}
+  \item \textbf{[20\% for correct implementation of linear regression]} With settings $M = 5000$, $var1 = 1$, $var2 = 0.3$, $degree = 45$, report the weight and bias for x2y and y2x regressions.
+
+Note: getting the above numbers correctly is a necessary (not sufficient) condition for correct implementation. 
+ 
+  \item \textbf{[10\%]} Three plots of regression models in a row, each with $var2 \in \{0.1, 0.3, 0.8\}$, respectively. (Other settings remain intact: $M = 5000$, $var1 = 1$, $degree = 45$). 
+
+  \item \textbf{[5\%]} A description of the phenomena found in 1) and 2).
+
+  \item \textbf{[15\%]} We now set $var2 = 0.1$, but experiment with different rotation degrees. The student should design a controlled experimental protocol, plot three figures in a row with different settings, and describe the findings. 
+\end{enumerate}
+\end{problem}
+
+\input{problems/problem-1}
+
+\begin{problem}{Gradient Descent}{gd-bhd}
+
+In this problem, we will explore gradient descent optimization for linear regression, applied to the Boston house price prediction.
+
+\begin{enumerate}
+  \item \textbf{[30\%]} We implement the train-validation-test framework, where we train the model by mini-batch gradient descent, and validate model performance after each epoch. After reaching the maximum number of iterations, we pick the epoch that yields the best validation performance (the lowest risk), and test the model on the test set. 
+
+Without changing default hyperparameters, we report three numbers 
+  \begin{enumerate}
+    \item The number of epoch that yields the best validation performance,
+    \item The validation performance (risk) in that epoch, and
+    \item The test performance (risk) in that epoch. 
+  \end{enumerate}
+and two plots:
+  \begin{enumerate}
+    \item The learning curve of the training loss, and
+    \item The learning curve of the validation risk. 
+    \item where x-axis is the number of epochs, and y-axis is training loss and validation risk, respectively. 
+  \end{enumerate}
+
+  \item \textbf{[10\%]} We now explore non-linear features in the linear regression model. In particular, we adopt point-wise quadratic features. Suppose the original features are . We now extend it as . 
+
+At the same time, we tune -penalty to prevent overfitting by 
+	
+The hyperparameter  should be tuned from the set $\{3, 1, 0.3, 0.1, 0.03, 0.01\}$.
+
+Report the best hyperparameter , i.e., the one yields the best performance, and under this hyperparameter, the three numbers and two plots required in Problem 2(a).
+
+  \item \textbf{[10\%]} Ask a meaningful scientific question on this task by yourself, design an experimental protocol, report experimental results, and draw a conclusion.
+\end{enumerate}
+\end{problem}
+
+\input{problems/problem-2}
+
+% =================================================
+
+% \newpage
+
+% \vfill
+
+\bibliographystyle{apalike}
+\bibliography{refs}
+
+\end{document}
