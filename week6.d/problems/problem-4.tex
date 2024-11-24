@@ -1,0 +1,37 @@
+Recall the definition of linear regression in a probabilistic context:
+\begin{align*}
+  y_{i}=X_{i}^{\top}\vec{w} + \epsilon_{i}
+\end{align*}
+Where $\epsilon ~ \mathcal{N}(0, \sigma^{2})$. This means that $X^{\top}w$ should provide the expected value of $f(y)$ with some error given by a normal distribution. Since $\epsilon$ follows the Gaussian normal distribution, we can write
+\begin{equation*}
+  P(y|X, w) = \Pi_{i=0}^{d} \mathcal{N}(X_{i}^{t}\vec{w},\sigma^{2})
+\end{equation*}
+We then take the logarithm of this to reduce the problem to a summation
+\begin{align*}
+  \log\left(P(y|X, w)\right) &= \sum_{i=0}^{d}\left[\log\left(\frac{1}{\sqrt{2\pi\sigma^{2}}}\right) - \frac{X_{i}^{\top}\vec{w} - t_{i}}{2\sigma^{2}}\right] \\
+  &=\frac-{d}{2}\log\left(2\pi\sigma^{2}\right) - \sum_{i=0}^{d}\left[ \frac{X_{i}^{\top}\vec{w} - t_{i}}{2\sigma^{2}}\right] \\
+  &=\frac-{d}{2}\log\left(2\pi\sigma^{2}\right) - \frac{1}{2\sigma^{2}}\sum_{i=0}^{d}\left(X_{i}^{\top}\vec{w} - t_{i}\right)^{2}
+\end{align*}
+
+In order to apply the L1 regularization to this problem, we can add a regularizing factor to the expression:
+\begin{equation*}
+  P(\vec{w})\alpha \exp\left(-\lambda ||\vec{w}||_{1}\right)
+\end{equation*}
+
+We can find $P(\vec{w} | X, \vec{y})$ using Bayes' theorem
+\begin{equation*}
+  P(\vec{w}|X, \vec{t}) \alpha P(\vec{t} | X,\vec{w})\cdot P(\vec{w})
+\end{equation*}
+and since we know the distribution of $P(w)$, we can follow the steps to find the logarithmic version of $P(\vec{w}|X,\vec{t})$, appending the multiplication of $P(w)$ to get
+\begin{equation*}
+  P(\vec{w}|X,\vec{t}) = -\frac{d}{2}\log\left(2\pi\sigma^{2}\right) - \frac{1}{2\sigma^{2}}\sum_{i=0}^{d}\left(X_{i}^{\top}\vec{w} - t_{i}\right) -\lambda ||\vec{w}||_{1}
+\end{equation*}
+
+If we minimize this function, then we get the same equation as the L1 loss:
+\begin{align*}
+  \hat{w} &= \text{argmin}_{w}
+  P(\vec{w}|X,\vec{t}) = \text{argmin}_{w}\left[-\frac{d}{2}\log\left(2\pi\sigma^{2}\right) - \frac{1}{2\sigma^{2}}\sum_{i=0}^{d}\left(X_{i}^{\top}\vec{w} - t_{i}\right)^{2} -\lambda ||\vec{w}||_{1}\right] \\
+        &=\text{argmin}_{w}\left[\frac{1}{2\sigma^{2}}\sum_{i=0}^{d}\left(X_{i}^{\top}\vec{w} - t_{i}\right)^{2} -\lambda ||\vec{w}||_{1}\right]
+\end{align*}
+
+Conceptually, this means that minimizing the loss function and maximizing the expectation function of the probability distribution are equivalent, so minimizing the loss function is an accurate way to obtain an optimal weight matrix $w$ for a model.\qed

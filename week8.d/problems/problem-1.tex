@@ -1,0 +1,33 @@
+First, we recall the definition of the softmax function:
+\[
+  y_k = \frac{\exp(z_k)}{\sum^K_{j=1}\exp(z_j)}
+\]
+where we set $z_k=w^\top_kx+b_k$. Now, recalling the chain rule, we can see that our partial derivatives can be computed as follows:
+\[
+  \frac{\partial J}{\partial w_{k,i}} = \frac{\partial J}{\partial y_k} \frac{\partial y_k}{\partial z_k} \frac{\partial z_k}{\partial w_k}
+\]
+\[
+  \frac{\partial J}{\partial b_k} = \frac{\partial J}{\partial y_k} \frac{\partial y_k}{\partial z_k} \frac{\partial z_k}{\partial b_k}
+\]
+Thus we proceed by finding $\frac{\partial J}{\partial z_k}$ as follows:
+
+\begin{align*}
+  \frac{\partial J}{\partial z_k} =& \frac{\partial J}{\partial y_k} \frac{\partial y_k}{\partial z_k} \\
+  \frac{\partial J}{\partial y_k} =& \frac{\partial}{\partial y_k} t_k\log(y_k) && \text{generalizes across multiple elements} \\
+  =& \frac{t_k}{y_k} \\
+\end{align*}
+\begin{align*}
+  \frac{\partial y_k}{\partial z_k} =& \frac{\partial}{\partial z_k} \frac{\exp(z_k)}{\sum^K_{j=1}\exp(z_j)} \\
+  =& \frac{\frac{\partial}{\partial z_k} \exp(z_k) \cdot \left(\sum^K_{j=1}\exp(z_j)\right) - \exp(z_k)\cdot\frac{\partial}{\partial z_k}\left(\sum^K_{j=1}\exp(z_j)\right)}{\left(\sum^K_{j=1}\exp(z_j)\right)^2} \\
+  =& \frac{\exp(z_k)\cdot\sum^K_{j=1}\exp(z_k) - \exp(z_k)\exp(z_k)}{\left(\sum^K_{j=1}\exp(z_j)\right)^2} \\
+  =& \frac{\exp(z_k)\left(\sum^K_{j=1}\exp(z_j)-\exp(z_k)\right)}{\left(\sum^K_{j=1}\exp(z_j)\right)^2} \\
+\end{align*}
+\begin{align*}
+  =& y_k(1-y_k) && \text{since } y_k = \frac{\exp(z_k)}{\sum^K_{j=1}\exp(z_j)} \text{for } y_k, z_k 
+  =& -y_ky_w &&\text{for} y_k, z_i \\
+  =& y_k(\delta - y_i) = y_k-t_k
+\end{align*}
+
+We can then easily find the derivative w.r.t. $b$ and $w$: 
+\[\frac{\partial z}{\partial b} = 1 \therefore \frac{\partial J}{\partial b_k} = y_k - t_k\]
+\[\frac{\partial z}{\partial w} = x \therefore \frac{\partial J}{\partial w_k} = x(y_k - t_k)\]

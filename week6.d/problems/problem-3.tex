@@ -1,0 +1,35 @@
+Recall the general form for a gradient descent optimization algorithm:
+\begin{enumerate}
+  \item Initialize the weights
+  \item Check the gradient at the starting point
+  \item modify the weights according to a learning rate
+  \item repeat starting at step 2 until the loss is below a certain threshold
+\end{enumerate}
+We need to know how to calculate the gradient of the L1 loss in order to follow the steps above, so we can compute it as follows:
+\begin{align*}
+  L(\vec{w}) &= \frac{1}{2M} \sum_{i=1}^{n} \left(\sum_{i=0}^{d}x_i w_{i}^{(m)} - t^{(m)}\right) + \lambda \sum_{i=0}^{d}|w_{i}| \\
+  L(\vec{w}) &= \frac{1}{2M} \left(X\vec{w} - \vec{t}\right)^{\top}\left(X\vec{w} - \vec{t}\right) + \lambda |\vec{w}| \\
+  \nabla_{w}L(\vec{w}) &= \frac{1}{M}X^{\top}(X\vec{w}-\vec{t})\footnote{Recall our discussion on proximal methods. We only need to care about the MSE term for our gradient descent}
+\end{align*}
+
+We also need to recall the proximal operator:
+\[
+\text{prox}(w, \tau) =
+\begin{cases}
+w - \tau & \text{if } w > \tau \\
+0 & \text{if } |w| \leq \tau \\
+w + \tau & \text{if } w < -\tau
+\end{cases}
+\]
+
+With these results, we can provide the pseudocode for the gradient-based optimization of $\vec{w}$ using the L1 penalized MSE as shown in algorithm \ref{alg:l1gd}
+
+\begin{algorithm}
+    \KwIn{Initial weights \( \vec{w}^{(0)} \), learning rate \( \eta \), maximum iterations \( T \)}
+    \For{$t = 0$ \KwTo $T-1$}{
+        $\nabla_{w}L(\vec{w}) \gets \frac{1}{M}X^{\top}(X\vec{w}-\vec{t})$\;
+        $\vec{w}^{(t+1)} \gets \vec{w}^{(t)} - \eta \nabla J(\vec{w}^{(t)})$\;
+        $\vec{w}^{(t+1)} \gets \text{prox}(\vec{w}^{(t+1)}, \lambda \eta)$\;
+    }
+\caption{Gradient-Based Optimization Algorithm}\label{alg:l1gd}
+\end{algorithm}

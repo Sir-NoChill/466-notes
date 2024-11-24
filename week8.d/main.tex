@@ -1,0 +1,43 @@
+\input{preamble}
+\input{format}
+\input{commands}
+
+\begin{document}
+
+\begin{Large}
+    \textsf{\textbf{Homework - November 19, 2024}}
+\end{Large}
+
+\vspace{1ex}
+
+\textsf{\textbf{Student:}} \text{Ayrton Chilibeck}, \href{mailto:achilibe@ualberta.ca}{\texttt{achilibe@ualberta.ca}}\\
+\textsf{\textbf{Lecturer:}} \text{Lili Mou}, \href{mailto:UoA.F24.466566@gmail.com}{\texttt{UoA.F24.466566@gmail.com}}
+
+
+\vspace{2ex}
+
+
+\begin{problem}{Parial Derivative of the Softmax Regression}{softmax}
+  If we consider the softmax regression $y = \text{softmax}( Wx + b )$ where $x\in R^d, b, y \in R^k$ Then we know that the cross entropy loss for a single sample is $J = - \sum^K_{k=1} t_k\log (y_k)$ where $t_k$ denotes whether or not the sample is in the $k$th category. 
+
+How can we derive the gradients $\frac{\partial J}{\partial w_{k, i}}$ and $\frac{\partial J}{\partial b_k}$
+\end{problem}
+
+\input{problems/problem-1}
+
+\begin{problem}{Partial Derivatives in Matrix form}{matfom}
+  Rewrite your solution to the above in matrix form.
+\end{problem}
+
+\input{problems/problem-2}
+
+% =================================================
+
+% \newpage
+
+% \vfill
+
+\bibliographystyle{apalike}
+\bibliography{refs}
+
+\end{document}

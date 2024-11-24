@@ -1,0 +1,15 @@
+Recall the definition of the L2 penalized MSE:
+\[
+  J(\vec{w}^{(t)}) = \frac{1}{2M} \sum_{i=1}^{M} \left(\\sum_{i=0}^d w_{i}x_{i}^{(m)} - t^{(m)}\right)^2 + \lambda \sum_{i=0}^{d}w_{i}^{2}
+\]
+we can rewrite this in matrix notation as follows:
+\[
+  J(\vec{w}^{(t)}) = \frac{1}{2M} (X^\top w - \vec{t})^{\top}(X^{\top}w-\vec{t}) + \lambda |\vec{w}_{i}|^{2}_{2}
+\]
+Our goal is to compute the optimal $\vec{w}$ for our algorithm, which is one such that we minimize the loss. If we take the gradient with respect to $\vec{w}$, we can solve for the optimal $\vec{w}$ as follows:
+\begin{align*}
+  \nabla_{w} J(\vec{w}^{(t)}) &= \frac{1}{M}X^{\top}(X\vec{w} - \vec{t}) + 2\lambda\vec{w}\\
+  \vec{0}&= X^{\top}(X\vec{w} - \vec{t}) + M\lambda\vec{w} && \text{F.O. Condition}\\
+  \vec{w}&=\left(X^{\top}X + M\lambda I\right)^{-1}(X^{\top}\vec{t})
+\end{align*}
+Which gives us the optimal $w$ for our algorithm.\qed

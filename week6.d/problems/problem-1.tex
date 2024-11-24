@@ -1,0 +1,31 @@
+Recall the definition of concavity:
+\begin{align*}
+f(y)\geq f(x)+\nabla f(x)^{T}(y-x)
+\end{align*}
+If both $f$ and $g$ follow this definition, then we can write
+\begin{equation*}
+  f(y) + g(y) \geq f(x) + \nabla f(x)^{T}(y-x) + g(x) + \nabla g(x)^{T}(y-x)
+\end{equation*}
+I define $h = f + g$, so that we can write
+\begin{equation*}
+  h(y) \geq h(x) + \nabla f(x)^{T}(y-x) + \nabla g(x)^{T}(y-x)
+\end{equation*}
+Now, we can recall the definition of the gradient $\nabla$:
+\begin{equation*}
+\nabla f =
+\begin{pmatrix}
+\frac{\partial f}{\partial x_1} \\
+\frac{\partial f}{\partial x_2} \\
+\vdots \\
+\frac{\partial f}{\partial x_n}
+\end{pmatrix}
+\end{equation*}
+since we are multiplying a single term by this collumn matrix, I write
+\begin{equation*}
+  h(y) \geq h(x) + (\nabla f(x)^{T} + \nabla g(x)^{T})(y-x)
+\end{equation*}
+and we can further simplify to
+\begin{equation*}
+  h(y) \geq h(x) + (\nabla h(x)^{T})(y-x)
+\end{equation*}
+as required. We see that the sum of two convex functions will result in another convex function.\qed
